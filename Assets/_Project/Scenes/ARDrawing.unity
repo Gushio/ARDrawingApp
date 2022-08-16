@@ -282,9 +282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bf6f7e60900412da9efa3d87fd81bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brush: {fileID: 3401244180983179553, guid: f6365e31c53164628ba4868743e360d6, type: 3}
-  _distanceFromCam: 1
-  _drawThreshold: 0.01
+  brush: {fileID: 3401244180983179553, guid: f6365e31c53164628ba4868743e360d6, type: 3}
+  distanceFromCam: 1
+  drawThreshold: 0.01
 --- !u!4 &415615400
 Transform:
   m_ObjectHideFlags: 0

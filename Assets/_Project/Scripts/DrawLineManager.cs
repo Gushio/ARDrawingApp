@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DrawLineManager : MonoBehaviour
 {
-    public GameObject _brush;
-    public float _distanceFromCam = 1f;
-    public float _drawThreshold = 0.01f;
+    public GameObject brush;
+    public float distanceFromCam = 1f;
+    public float drawThreshold = 0.01f;
     private Transform _camTransform;
     private LineRenderer _lineRendererBrush;
     private Vector3 _lastDrawPoint;
     private bool _isDrawing;
-    
+
     void Start()
     {
         _camTransform = Camera.main.transform;
@@ -21,14 +21,14 @@ public class DrawLineManager : MonoBehaviour
     {
         if(_isDrawing)
         {
-            Vector3 drawPoint = (_camTransform.forward * _distanceFromCam) + _camTransform.position;
+            Vector3 drawPoint = (_camTransform.forward * distanceFromCam) + _camTransform.position;
             
             if(_lineRendererBrush == null)
             {
                 CreateBrush(drawPoint);
             }
             
-            if (Vector3.Distance(drawPoint, _lastDrawPoint) > _drawThreshold)
+            if (Vector3.Distance(drawPoint, _lastDrawPoint) > drawThreshold)
             {
                 AddDrawPoint(drawPoint);
                 _lastDrawPoint = drawPoint;
@@ -51,7 +51,7 @@ public class DrawLineManager : MonoBehaviour
     
     private void CreateBrush(Vector3 drawPoint)
     {
-        GameObject brushInstance = Instantiate(_brush);
+        GameObject brushInstance = Instantiate(brush);
         _lineRendererBrush = brushInstance.GetComponent<LineRenderer>();
         _lineRendererBrush.SetPosition(0, drawPoint);
     }
